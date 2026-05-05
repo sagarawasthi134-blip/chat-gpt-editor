@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat-GPT Editor - Image, Video, Audio & Text Editing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Chat-GPT Editor</h1>
+            <p>Image | Video | Audio | Text Editing App</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="image">📷 Image</button>
+            <button class="tab-btn" data-tab="video">🎥 Video</button>
+            <button class="tab-btn" data-tab="audio">🎵 Audio</button>
+            <button class="tab-btn" data-tab="text">📝 Text</button>
+        </nav>
+
+        <!-- IMAGE EDITOR -->
+        <section id="image" class="tab-content active">
+            <h2>Image Editor</h2>
+            <div class="editor-section">
+                <input type="file" id="imageInput" accept="image/*" class="file-input">
+                <div id="imagePreview" class="preview-container">
+                    <p>Upload an image to start editing</p>
+                </div>
+                <div class="controls">
+                    <input type="range" id="brightnessSlider" min="0" max="200" value="100" class="slider">
+                    <label>Brightness</label>
+                    <input type="range" id="contrastSlider" min="0" max="200" value="100" class="slider">
+                    <label>Contrast</label>
+                    <input type="range" id="saturateSlider" min="0" max="200" value="100" class="slider">
+                    <label>Saturation</label>
+                    <button id="downloadImage" class="btn">⬇️ Download</button>
+                    <button id="resetImage" class="btn btn-secondary">🔄 Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO EDITOR -->
+        <section id="video" class="tab-content">
+            <h2>Video Editor</h2>
+            <div class="editor-section">
+                <input type="file" id="videoInput" accept="video/*" class="file-input">
+                <div id="videoPreview" class="preview-container">
+                    <video id="videoPlayer" controls></video>
+                </div>
+                <div class="controls">
+                    <input type="text" id="videoSpeed" placeholder="Speed (1.0)" value="1.0" class="input-field">
+                    <button id="playVideo" class="btn">▶️ Play</button>
+                    <button id="pauseVideo" class="btn">⏸️ Pause</button>
+                    <button id="downloadVideo" class="btn">⬇️ Download</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- AUDIO EDITOR -->
+        <section id="audio" class="tab-content">
+            <h2>Audio Editor</h2>
+            <div class="editor-section">
+                <input type="file" id="audioInput" accept="audio/*" class="file-input">
+                <div id="audioPreview" class="preview-container">
+                    <audio id="audioPlayer" controls style="width: 100%;"></audio>
+                </div>
+                <div class="controls">
+                    <input type="range" id="volumeSlider" min="0" max="100" value="100" class="slider">
+                    <label>Volume</label>
+                    <button id="playAudio" class="btn">▶️ Play</button>
+                    <button id="pauseAudio" class="btn">⏸️ Pause</button>
+                    <button id="downloadAudio" class="btn">⬇️ Download</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEXT EDITOR -->
+        <section id="text" class="tab-content">
+            <h2>Text Editor</h2>
+            <div class="editor-section">
+                <textarea id="textInput" placeholder="Type your text here..." class="text-area"></textarea>
+                <div class="text-controls">
+                    <button id="boldBtn" class="btn">🅱️ Bold</button>
+                    <button id="italicBtn" class="btn">🅸 Italic</button>
+                    <button id="underlineBtn" class="btn">🆄 Underline</button>
+                    <input type="color" id="colorPicker" class="color-picker" title="Text Color">
+                    <select id="fontSizeSelect" class="select-field">
+                        <option value="12">12px</option>
+                        <option value="14">14px</option>
+                        <option value="16" selected>16px</option>
+                        <option value="18">18px</option>
+                        <option value="20">20px</option>
+                        <option value="24">24px</option>
+                    </select>
+                </div>
+                <div id="textPreview" class="text-preview">Preview will appear here</div>
+                <div class="controls">
+                    <button id="copyText" class="btn">📋 Copy</button>
+                    <button id="downloadText" class="btn">⬇️ Download</button>
+                    <button id="clearText" class="btn btn-secondary">🗑️ Clear</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>💚 Made with ❤️ | Chat-GPT Editor v1.0</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
